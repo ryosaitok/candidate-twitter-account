@@ -13,8 +13,6 @@ Python 3.7
 Check file requirements.txt if you want to know other libraries and versions of them.
 
 # How to use
-- Create file 「antisocial_words.csv」
-  - Write the words you do not want to collect in CSV format without space. （ex. f◯ck,kill you,xxx）
 - Make the necessary settings to use the Sheet API and Twitter API.
   - cf. https://developers.google.com/sheets/api
   - cf. https://developer.twitter.com/en/docs/ads/general/guides/getting-started
@@ -32,6 +30,8 @@ Check file requirements.txt if you want to know other libraries and versions of 
     - ACCESS_TOKEN_SECRET=xxx
     - CONSUMER_KEY=xxx
     - CONSUMER_SECRET=xxx 
+    - ANTISOCIAL_WORDS=xxx
+      - Write the words you do not want to collect without space. （ex. f◯ck,kill you,xxx）
 - Type `$ pip install -r requirements.txt` command to load the required library.
 - Type `$ brew install forego` command to load the library that can read authentication information from .env file.
 - Type `$ forego run python batch.py` command to run the program.
