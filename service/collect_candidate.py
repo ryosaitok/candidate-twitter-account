@@ -80,9 +80,9 @@ def execute(gid):
 
 
 def write_evaluated_users(gid, api, job_words_dict, career_words_dict, user_ids, target_ids):
-    # ツイッターユーザーのユーザーID100件ずつのリスト（最大30件）にして、順次処理する。
-    # フォロワー数が数万人の場合など処理時間が長くなってしまうため最大でも1000個になるよう絞っている。1000件を扱う場合でも処理終了までに30~45分程度かかる見込み。
-    ids_list = [target_ids[i:i + 100] for i in range(0, len(target_ids), 100)][:10]
+    # ツイッターユーザーのユーザーID20件ずつのリスト（最大500件）にして、順次処理する。
+    # フォロワー数が数万人の場合など処理時間が長くなってしまうため最大でも1000個になるよう絞っている。500件を扱う場合でも処理終了までに30分程度かかる見込み。
+    ids_list = [target_ids[i:i + 20] for i in range(0, len(target_ids), 20)][:25]
     for i, ids in enumerate(ids_list):
         users = api.lookup_users(user_ids=ids)
         print('{}回目の処理開始。usersの数: {}\nAPIアクセス制限対策で10秒待ちます...'.format(i + 1, len(users)))
